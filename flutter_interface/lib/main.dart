@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_interface/Models.dart';
@@ -39,7 +41,7 @@ class _MyHomePageState extends State<MyHomePage>
   @override
   void initState() {
     super.initState();
-    _tabController = TabController(length: 2, vsync: this);
+    _tabController = TabController(length: 4, vsync: this);
     _tabController.addListener(() {
       setState(() {
         _showPages = getPage(_tabController.index);
@@ -58,35 +60,42 @@ class _MyHomePageState extends State<MyHomePage>
     return Scaffold(
       appBar: AppBar(
         title: const Text("Interface Sample"),
+        bottom:  TabBar(
+          tabs: tabItems,
+          controller: _tabController,
+          isScrollable: true,
+        ),
       ),
       body: Column(
         children: [
-          TabBar(
-            tabs: tabItems,
-            controller: _tabController,
-          ),
           const SizedBox(height: 10),
           Expanded(
-            child: ListView.builder(
-              padding: const EdgeInsets.symmetric(horizontal: 10),
-              itemCount: _showPages.length,
-              itemBuilder: (context, index) {
-                return Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 2),
-                  child: ListTile(
-                    isThreeLine: true,
-                    title: Text(_showPages[index].title),
-                    subtitle: Text(_showPages[index].description),
-                    onTap: () {
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => _showPages[index].page));
-                    },
-                    tileColor: Colors.grey[200],
-                  ),
-                );
-              },
+            child: ScrollConfiguration(
+              behavior: ScrollConfiguration.of(context).copyWith(dragDevices: {
+                PointerDeviceKind.touch,
+                PointerDeviceKind.mouse,
+              },),
+              child: ListView.builder(
+                padding: const EdgeInsets.all(10),
+                itemCount: _showPages.length,
+                itemBuilder: (context, index) {
+                  return Padding(
+                    padding: const EdgeInsets.symmetric(vertical: 2),
+                    child: ListTile(
+                      isThreeLine: true,
+                      title: Text(_showPages[index].title),
+                      subtitle: Text(_showPages[index].description),
+                      onTap: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => _showPages[index].page));
+                      },
+                      tileColor: Colors.grey[200],
+                    ),
+                  );
+                },
+              ),
             ),
           ),
         ],
