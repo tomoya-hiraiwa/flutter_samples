@@ -6,7 +6,9 @@ import 'package:flutter_interface/introductions/handling_gesture_page.dart';
 import 'package:flutter_interface/introductions/material_compornent_page.dart';
 import 'package:flutter_interface/introductions/stateful_widget_page.dart';
 import 'package:flutter_interface/material_widgets/alert_dialog_page.dart';
+import 'package:flutter_interface/material_widgets/appbar_page.dart';
 import 'package:flutter_interface/material_widgets/badge_page.dart';
+import 'package:flutter_interface/material_widgets/bottom_appbar_page.dart';
 import 'package:flutter_interface/material_widgets/bottom_sheet_page.dart';
 import 'package:flutter_interface/material_widgets/checkbox_list_tile_page.dart';
 import 'package:flutter_interface/material_widgets/circular_progress_indicator_page.dart';
@@ -65,6 +67,11 @@ List<PageItem> containmentWidgets = [
   PageItem(title: "Switch ListTile", description: "ListTile with Switch", page: const SwitchListTilePage()),
 ];
 
+List<PageItem> navigationWidgets = [
+  PageItem(title: "AppBar", description: "Material AppBar with Tabs", page: const AppBarPage()),
+  PageItem(title: "Bottom AppBar", description: "Material Bottom AppBar with Tabs", page: const BottomAppBarPage()),
+];
+
 
 List<PageItem> getPage(int index) {
   switch(index){
@@ -72,6 +79,7 @@ List<PageItem> getPage(int index) {
     case 1: return actionsWidgets;
     case 2: return communicationWidgets;
     case 3: return containmentWidgets;
+    case 4: return navigationWidgets;
     default: return introductions;
   }
 }
@@ -81,5 +89,6 @@ List<Tab> tabItems = const [
   Tab(text: "Actions Widgets"),
   Tab(text: "Communication Widgets"),
   Tab(text: "Containment Widgets"),
+  Tab(text: "Navigation Widgets"),
 ];
 
