@@ -34,7 +34,7 @@ class _ChipPageState extends State<ChipPage> {
             ),
             const SizedBox(height: 20),
             const Text("Filter Chip", style: TextStyle(fontSize: 20)),
-            InputChip(
+            FilterChip(
               label: const Text("Filter Chip"),
               selected: _isFilterChipSelected,
               onSelected: (bool value) {
