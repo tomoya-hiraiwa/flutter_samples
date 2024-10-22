@@ -11,6 +11,8 @@ import 'package:flutter_interface/material_widgets/badge_page.dart';
 import 'package:flutter_interface/material_widgets/bottom_appbar_page.dart';
 import 'package:flutter_interface/material_widgets/bottom_sheet_page.dart';
 import 'package:flutter_interface/material_widgets/checkbox_list_tile_page.dart';
+import 'package:flutter_interface/material_widgets/checkbox_page.dart';
+import 'package:flutter_interface/material_widgets/chip_page.dart';
 import 'package:flutter_interface/material_widgets/circular_progress_indicator_page.dart';
 import 'package:flutter_interface/material_widgets/fab_with_bottom_navigation_page.dart';
 import 'package:flutter_interface/material_widgets/fab_with_scaffold_page.dart';
@@ -20,10 +22,15 @@ import 'package:flutter_interface/material_widgets/list_tile_page.dart';
 import 'package:flutter_interface/material_widgets/material_buttons_page.dart';
 import 'package:flutter_interface/material_widgets/material_card_page.dart';
 import 'package:flutter_interface/material_widgets/material_fab_page.dart';
+import 'package:flutter_interface/material_widgets/navigation_bar_page.dart';
+import 'package:flutter_interface/material_widgets/navigation_bar_page.dart';
+import 'package:flutter_interface/material_widgets/navigation_drawer_page.dart';
+import 'package:flutter_interface/material_widgets/navigation_rail_page.dart';
 import 'package:flutter_interface/material_widgets/radiobutton_list_tile_page.dart';
 import 'package:flutter_interface/material_widgets/segmented_button_page.dart';
 import 'package:flutter_interface/material_widgets/snackbar_page.dart';
 import 'package:flutter_interface/material_widgets/switch_list_tile_page.dart';
+import 'package:flutter_interface/material_widgets/tabbar_page.dart';
 
 class PageItem{
   String title;
@@ -70,6 +77,16 @@ List<PageItem> containmentWidgets = [
 List<PageItem> navigationWidgets = [
   PageItem(title: "AppBar", description: "Material AppBar with Tabs", page: const AppBarPage()),
   PageItem(title: "Bottom AppBar", description: "Material Bottom AppBar with Tabs", page: const BottomAppBarPage()),
+  PageItem(title: "NavigationBar", description: "Material3 NavigationBar", page: const NavigationBarPage()),
+  PageItem(title: "NavigationDrawer", description: "Material3 NavigationDrawer", page: const NavigationDrawerPage()),
+  PageItem(title: "Navigation Rail", description: "Material3 NavigationRail\n(required Tablet or webPage)", page: const NavigationRailPage()),
+  PageItem(title: "TabBar", description: "Material3 TabBar in AppBar", page: const TabBarPage()),
+];
+
+List<PageItem> selectionWidgets = [
+  PageItem(title: "CheckBox", description: "Material3 CheckBox", page: const CheckBoxPage()),
+  PageItem(title: "Chip", description: "Material3 Chip\n(Input,Filter,Action)", page: const ChipPage()),
+
 ];
 
 
@@ -80,6 +97,7 @@ List<PageItem> getPage(int index) {
     case 2: return communicationWidgets;
     case 3: return containmentWidgets;
     case 4: return navigationWidgets;
+    case 5: return selectionWidgets;
     default: return introductions;
   }
 }
@@ -90,5 +108,6 @@ List<Tab> tabItems = const [
   Tab(text: "Communication Widgets"),
   Tab(text: "Containment Widgets"),
   Tab(text: "Navigation Widgets"),
+  Tab(text: "Selection Widgets"),
 ];
 

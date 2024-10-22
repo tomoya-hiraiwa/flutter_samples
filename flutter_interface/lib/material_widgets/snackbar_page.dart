@@ -10,7 +10,7 @@ class SnackBarPage extends StatelessWidget {
         title: const Text("SnackBar"),
       ),
       body: Center(
-        child: Row(
+        child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             ElevatedButton(
@@ -27,7 +27,7 @@ class SnackBarPage extends StatelessWidget {
                 },
                 child: const Text("Show Fixed SnackBar")
             ),
-            const SizedBox(width: 20),
+            const SizedBox(height: 20),
             ElevatedButton(
                 onPressed: () {
                   ScaffoldMessenger.of(context).showSnackBar(
