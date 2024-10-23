@@ -4,7 +4,7 @@ This project is a catalog of Flutter Widgets and Material Components.
 
 Documents from [Flutter](https://flutter.dev/docs) and [Material Design](https://material.io/design)
 
-This project is created based on (User interface in Flutter)[https://docs.flutter.dev/ui]
+This project is created based on [User interface in Flutter](https://docs.flutter.dev/ui)
 
 
 ## Code Catalog
