@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_interface/material_widgets/navigation_bar_page.dart';
+import 'package:flutter_interface/navigation_widgets/navigation_bar_page.dart';
 
 class TabBarPage extends StatelessWidget {
   const TabBarPage({super.key});

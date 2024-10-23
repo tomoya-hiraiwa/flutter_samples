@@ -5,32 +5,39 @@ import 'package:flutter_interface/introductions/extra_stateful_widget_page.dart'
 import 'package:flutter_interface/introductions/handling_gesture_page.dart';
 import 'package:flutter_interface/introductions/material_compornent_page.dart';
 import 'package:flutter_interface/introductions/stateful_widget_page.dart';
-import 'package:flutter_interface/material_widgets/alert_dialog_page.dart';
-import 'package:flutter_interface/material_widgets/appbar_page.dart';
-import 'package:flutter_interface/material_widgets/badge_page.dart';
-import 'package:flutter_interface/material_widgets/bottom_appbar_page.dart';
-import 'package:flutter_interface/material_widgets/bottom_sheet_page.dart';
-import 'package:flutter_interface/material_widgets/checkbox_list_tile_page.dart';
-import 'package:flutter_interface/material_widgets/checkbox_page.dart';
-import 'package:flutter_interface/material_widgets/chip_page.dart';
-import 'package:flutter_interface/material_widgets/circular_progress_indicator_page.dart';
-import 'package:flutter_interface/material_widgets/fab_with_bottom_navigation_page.dart';
-import 'package:flutter_interface/material_widgets/fab_with_scaffold_page.dart';
-import 'package:flutter_interface/material_widgets/icon_button_page.dart';
-import 'package:flutter_interface/material_widgets/linear_progress_indicator_page.dart';
-import 'package:flutter_interface/material_widgets/list_tile_page.dart';
-import 'package:flutter_interface/material_widgets/material_buttons_page.dart';
-import 'package:flutter_interface/material_widgets/material_card_page.dart';
-import 'package:flutter_interface/material_widgets/material_fab_page.dart';
-import 'package:flutter_interface/material_widgets/navigation_bar_page.dart';
-import 'package:flutter_interface/material_widgets/navigation_bar_page.dart';
-import 'package:flutter_interface/material_widgets/navigation_drawer_page.dart';
-import 'package:flutter_interface/material_widgets/navigation_rail_page.dart';
-import 'package:flutter_interface/material_widgets/radiobutton_list_tile_page.dart';
-import 'package:flutter_interface/material_widgets/segmented_button_page.dart';
-import 'package:flutter_interface/material_widgets/snackbar_page.dart';
-import 'package:flutter_interface/material_widgets/switch_list_tile_page.dart';
-import 'package:flutter_interface/material_widgets/tabbar_page.dart';
+import 'package:flutter_interface/containment_widgets/alert_dialog_page.dart';
+import 'package:flutter_interface/navigation_widgets/appbar_page.dart';
+import 'package:flutter_interface/communication_widgets/badge_page.dart';
+import 'package:flutter_interface/navigation_widgets/bottom_appbar_page.dart';
+import 'package:flutter_interface/containment_widgets/bottom_sheet_page.dart';
+import 'package:flutter_interface/containment_widgets/checkbox_list_tile_page.dart';
+import 'package:flutter_interface/selection_widgets/checkbox_page.dart';
+import 'package:flutter_interface/selection_widgets/chip_page.dart';
+import 'package:flutter_interface/communication_widgets/circular_progress_indicator_page.dart';
+import 'package:flutter_interface/action_widgets/fab_with_bottom_navigation_page.dart';
+import 'package:flutter_interface/action_widgets/fab_with_scaffold_page.dart';
+import 'package:flutter_interface/action_widgets/icon_button_page.dart';
+import 'package:flutter_interface/communication_widgets/linear_progress_indicator_page.dart';
+import 'package:flutter_interface/containment_widgets/list_tile_page.dart';
+import 'package:flutter_interface/action_widgets/material_buttons_page.dart';
+import 'package:flutter_interface/containment_widgets/material_card_page.dart';
+import 'package:flutter_interface/action_widgets/material_fab_page.dart';
+import 'package:flutter_interface/navigation_widgets/navigation_bar_page.dart';
+import 'package:flutter_interface/navigation_widgets/navigation_bar_page.dart';
+import 'package:flutter_interface/navigation_widgets/navigation_drawer_page.dart';
+import 'package:flutter_interface/navigation_widgets/navigation_rail_page.dart';
+import 'package:flutter_interface/containment_widgets/radiobutton_list_tile_page.dart';
+import 'package:flutter_interface/action_widgets/segmented_button_page.dart';
+import 'package:flutter_interface/communication_widgets/snackbar_page.dart';
+import 'package:flutter_interface/containment_widgets/switch_list_tile_page.dart';
+import 'package:flutter_interface/navigation_widgets/tabbar_page.dart';
+import 'package:flutter_interface/selection_widgets/datepicker_dialog_page.dart';
+import 'package:flutter_interface/selection_widgets/menu_page.dart';
+import 'package:flutter_interface/selection_widgets/radio_button_page.dart';
+import 'package:flutter_interface/selection_widgets/slider_page.dart';
+import 'package:flutter_interface/selection_widgets/switch_page.dart';
+import 'package:flutter_interface/selection_widgets/timepicker_dialog_page.dart';
+import 'package:flutter_interface/text_input_widgets/text_field_page.dart';
 
 class PageItem{
   String title;
@@ -85,8 +92,17 @@ List<PageItem> navigationWidgets = [
 
 List<PageItem> selectionWidgets = [
   PageItem(title: "CheckBox", description: "Material3 CheckBox", page: const CheckBoxPage()),
-  PageItem(title: "Chip", description: "Material3 Chip\n(Input,Filter,Action)", page: const ChipPage()),
+  PageItem(title: "Chip", description: "Material3 Chip\nInput,Filter,Action", page: const ChipPage()),
+  PageItem(title: "DatePicker Dialog", description: "Material3 DatePickerDialog and DateRangePickerDialog", page: const DatePickerPage()),
+  PageItem(title: "Menu", description: "Menu using PopupMenuButton\nnote: MenuAnchor is now available", page: const MenuPage()),
+  PageItem(title: "Radio Button", description: "Material3 RadioButton in ListTile", page: const RadioButtonPage()),
+  PageItem(title: "Slider", description: "Material Slider and RangeSlider", page: const SliderPage()),
+  PageItem(title: "Switch", description: "Material3 Switch", page: const SwitchPage()),
+  PageItem(title: "TimePicker Dialog", description: "Material3 TimePicker Dialog", page: const TimePickerDialogPage()),
+];
 
+List<PageItem> textInputWidgets = [
+  PageItem(title: "TextField", description: "Material TextField", page: const TextFieldPage())
 ];
 
 
@@ -98,6 +114,7 @@ List<PageItem> getPage(int index) {
     case 3: return containmentWidgets;
     case 4: return navigationWidgets;
     case 5: return selectionWidgets;
+    case 6: return textInputWidgets;
     default: return introductions;
   }
 }
@@ -109,5 +126,6 @@ List<Tab> tabItems = const [
   Tab(text: "Containment Widgets"),
   Tab(text: "Navigation Widgets"),
   Tab(text: "Selection Widgets"),
+  Tab(text: "TextInput Widgets"),
 ];
 
