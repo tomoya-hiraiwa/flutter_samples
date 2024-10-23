@@ -1,17 +1,12 @@
 # flutter_interface
 
-
-[![Flutter](https://img.shields.io/badge/Flutter-2.2.3-blue.svg)](https://flutter.dev)
-[![Dart](https://img.shields.io/badge/Dart-2.13.4-blue.svg)](https://dart.dev)
-[![License](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
-
-Code and UI Samples that Flutter Widgets and Material Components.
+This project is a catalog of Flutter Widgets and Material Components.
 
 Documents from [Flutter](https://flutter.dev/docs) and [Material Design](https://material.io/design).
 
 [Components Catalog](https://docs.flutter.dev/ui/widgets/material)
 
-## Catalog
+## Code Catalog
 
 - [Introduction](#introduction)
 - [Actions Widgets](#actions-widgets)
